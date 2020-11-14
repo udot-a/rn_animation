@@ -2,15 +2,38 @@ import React from "react";
 import { Text, Button, StyleSheet, View, TouchableOpacity } from "react-native";
 
 const HomeScreen = ({navigation}) => {
-  // console.log(props);
 
   return(
     <View style={styles.container}>
-      <Text style={styles.text}>I am here anywhere!!!</Text>
+      <Text style={styles.text}>CHOOSE SAMPLE:</Text>
 
       <Button
         title={"Go to news"}
         onPress={() => navigation.navigate("New")}
+      />
+
+      <View style={styles.separator}/>
+
+      <Button
+        title={"Counter"}
+        color={"orange"}
+        onPress={() => navigation.navigate("Counter")}
+      />
+
+      <View style={styles.separator}/>
+
+      <Button
+        title={"Colors"}
+        color={"pink"}
+        onPress={() => navigation.navigate("Colors")}
+      />
+
+      <View style={styles.separator}/>
+
+      <Button
+        title={"Change colors"}
+        color={"brown"}
+        onPress={() => navigation.navigate("Change")}
       />
 
       <View style={styles.separator}/>
