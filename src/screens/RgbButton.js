@@ -30,12 +30,12 @@ const RgbButton = ({color, setState, value}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 20
+    margin: 10
   },
 
   text: {
     alignSelf: "flex-start",
-    fontSize: 25,
+    fontSize: 20,
     color: "tomato"
   },
 
