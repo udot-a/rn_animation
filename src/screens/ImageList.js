@@ -16,8 +16,6 @@ const ImageList = () => {
 
   return (
     <FlatList
-      // horizontal
-      // showsHorizontalScrollIndicator={true}
       ItemSeparatorComponent={() => (<View style={styles.separator}/>)}
       data={data}
       renderItem={({item}) => (<Card {...item}/>)}

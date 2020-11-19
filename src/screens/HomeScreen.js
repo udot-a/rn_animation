@@ -8,8 +8,16 @@ const HomeScreen = ({navigation}) => {
       <Text style={styles.text}>CHOOSE SAMPLE:</Text>
 
       <Button
-        title={"Go to news"}
-        onPress={() => navigation.navigate("New")}
+        title={"Box Screen"}
+        onPress={() => navigation.navigate("BoxScreen")}
+        color={"tomato"}
+      />
+
+      <View style={styles.separator}/>
+
+      <Button
+        title={"Text Input HARD"}
+        onPress={() => navigation.navigate("Input")}
       />
 
       <View style={styles.separator}/>

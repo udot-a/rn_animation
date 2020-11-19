@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {StyleSheet, View, FlatList, Picker, Text} from "react-native";
+import {StyleSheet, View, FlatList, Picker, Text, Platform} from "react-native";
 import RgbButton from "./RgbButton";
 
 const ChangeColorScreen = () => {
@@ -46,34 +46,29 @@ const ChangeColorScreen = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        style={{alignSelf: "center"}}
+        style={{height: Platform.OS === "android" ? "auto" : 260}}
         data={colors}
         renderItem={({item}) => (<RgbButton color={item} setState={setState} value={rgb[item]}/>)}
         keyExtractor={( item) =>  item}
       />
 
-      <View style={{margin: 10, height: 100, weight: 150, backgroundColor: `rgb(${getRGB()})`}}/>
 
       <View style={styles.chooseStep}>
-        <View >
           <Text style={styles.text}>
             {"Choose step to inc/dec: "}
           </Text>
-        </View>
 
-        <View >
           <Picker
             selectedValue={getStep()}
-            style={{ height: 20, width: 100 }}
+            style={{ height: 30, width: 100, alignSelf: "center"}}
             onValueChange={(itemValue) => setCurrentStep(itemValue)}
             mode={"dropdown"}
           >
             {pickers.map(item => (<Picker.Item label={item.title} value={item.title} key={item.id} />))}
           </Picker>
-        </View>
       </View>
 
-
+      <View style={[styles.viewColor, {backgroundColor: `rgb(${getRGB()})`}]}/>
 
     </View>
   );
@@ -81,18 +76,20 @@ const ChangeColorScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-around",
-    // alignItems: "center"
+    flex: 1,
+    flexDirection: "column"
   },
 
   chooseStep: {
-    alignSelf: "center",
-    flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
-    marginBottom: 10
+    flex: 1,
+  },
+
+  viewColor: {
+    alignSelf: "stretch",
+    margin: 10,
+    height: 100
   },
 
   text: {

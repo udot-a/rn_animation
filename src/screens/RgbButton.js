@@ -29,14 +29,15 @@ const RgbButton = ({color, setState, value}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    margin: 10
+    // justifyContent: "flex-start",
+    alignItems: "stretch",
+    padding: 10
   },
 
   text: {
     alignSelf: "flex-start",
     fontSize: 20,
-    color: "tomato"
+    paddingLeft: 10
   },
 
   buttonBlock: {
@@ -46,9 +47,7 @@ const styles = StyleSheet.create({
     borderColor: "green",
     borderRadius: 15,
     justifyContent: "space-around",
-    height: 100,
-    width: 300,
-    margin: 5
+    height: 100
   }
 
 });
